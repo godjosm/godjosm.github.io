@@ -25,6 +25,10 @@
   
 <script src="/js/jquery-1.11.1.min.js"></script>
 
+  <script>
+    var userDefinedSearchData = {};
+    var expandAll = false;
+  </script>
   
 <script src="/js/header.js"></script>
 
@@ -57,7 +61,7 @@
   <!-- 直接添加html内容即可 -->
 <!-- 可设置多行 -->
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 </head>
 
@@ -88,17 +92,59 @@
     </header>
     <ul id="main-menu" class="main-menu">
       
-      <li>
+      <li class="">
         
-          <a href="#与学习相关" class="smooth">
-            
+        <a class="fas fa-angle-down" style="cursor: pointer;">
+          
             <i class="fas fa-book"></i>
-            <span class="title">与学习相关</span>
+            <span class="title">与科研相关</span>
+          </a>
+          
+          <ul style="display: none;">
+            
+            <li>
+              <a href="#前沿与基础知识" class="smooth">
+                <i class="fas fa-file"></i>
+                <span class="title">前沿与基础知识</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#学校网站" class="smooth">
+                <i class="fas fa-book"></i>
+                <span class="title">学校网站</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#HiNAS" class="smooth">
+                <i class="fas fa-h-square"></i>
+                <span class="title">HiNAS</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#科学计算工具" class="smooth">
+                <i class="fas fa-c"></i>
+                <span class="title">科学计算工具</span>
+              </a>
+            </li>
+            
+          </ul>
+          
+      </li>
+      
+      <li class="">
+        
+          <a href="#邮箱" class="smooth">
+            
+            <i class="fas fa-envelope"></i>
+            <span class="title">邮箱</span>
           </a>
           
       </li>
       
-      <li>
+      <li class="">
         
           <a href="#代码仓库" class="smooth">
             
@@ -108,7 +154,7 @@
           
       </li>
       
-      <li>
+      <li class="">
         
         <a class="fas fa-angle-down" style="cursor: pointer;">
           
@@ -116,7 +162,7 @@
             <span class="title">其他工具</span>
           </a>
           
-          <ul>
+          <ul style="display: none;">
             
             <li>
               <a href="#技术论坛" class="smooth">
@@ -150,7 +196,7 @@
           
       </li>
       
-      <li>
+      <li class="">
         
           <a href="#视频网站" class="smooth">
             
@@ -160,7 +206,7 @@
           
       </li>
       
-      <li>
+      <li class="">
         
           <a href="#博客分享" class="smooth">
             
@@ -206,15 +252,18 @@
         </a>
       </li>
       <li class="dropdown hover-line language-switcher">
+        
         <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown">
           <img src="/images/flags/flag-cn.png" alt="flag-cn" /> Chinese
         </a>
         <ul class="dropdown-menu languages">
-          <li class="active">
-            <a href="/index.html">
-              <img src="/images/flags/flag-cn.png" alt="flag-cn" alt="flag-cn" /> Chinese
+          
+            <li class="active">
+              <a href="/index.html">
+                <img src="/images/flags/flag-cn.png" alt="flag-cn" alt="flag-cn" /> Chinese
             </a>
           </li>
+          
         </ul>
       </li>
       <li class="switch-mode hover-line" onclick="switchNightMode()">
@@ -245,13 +294,13 @@
         <div class="search-engine" style="display: none;">
           <div class="search-engine-head">
             <strong class="search-engine-tit">选择您的默认搜索引擎：</strong>
-            <div class="search-engine-tool">搜索热词： <span id="hot-btn"></span></div>
+            <div class="search-engine-tool">搜索热词： <span id="hot-btn" style="background-image: url(/images/off_on.png);"></span></div>
           </div>
           <ul class="search-engine-list search-engine-list_zmki_ul">
           </ul>
         </div>
     </section>
-    <script>search()</script>
+    <script>search('/images/search_icon.png')</script>
   
   
   
@@ -261,8 +310,24 @@
     
     
     
-    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="与学习相关"></i>与学习相关</h4>
+    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="前沿与基础知识"></i>前沿与基础知识</h4>
 <div class="row">
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://chat.openai.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://chat.openai.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/ChatGPT_logo.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>Chatgpt</strong>
+          </a>
+          <p class="overflowClip_2">目前最好用的AI大模型</p>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <div class="col-sm-3">
     <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://scholar.chongbuluo.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://scholar.chongbuluo.com/">
@@ -274,87 +339,7 @@
           <a href="#" class="xe-user-name overflowClip_1">
             <strong>虫部落学术搜索</strong>
           </a>
-          <p class="overflowClip_2">各种文献书籍搜索汇总。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://49.232.139.130:88/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://49.232.139.130:88/">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/HiNAS.png" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>HiNAS News</strong>
-          </a>
-          <p class="overflowClip_2">HiNAS讨论班动态发布页。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://49.232.139.130:10086/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://49.232.139.130:10086/">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/HiNAS_Overleaf.png" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>HiNAS Overleaf</strong>
-          </a>
-          <p class="overflowClip_2">HiNAS讨论班latex编辑分享页。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.gscaep.ac.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.gscaep.ac.cn/">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/jiuyuan2.png" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>中物院邮箱系统</strong>
-          </a>
-          <p class="overflowClip_2">中物院邮箱系统登录界面。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://39.98.208.89:9002/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://39.98.208.89:9002/">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/jiuyuan2.png" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>中物院教务系统</strong>
-          </a>
-          <p class="overflowClip_2">中物院教务选课系统。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://learn.tsinghua.edu.cn/f/login', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://learn.tsinghua.edu.cn/f/login">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/tshua.jpg" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>清华大学雨课堂</strong>
-          </a>
-          <p class="overflowClip_2">国内最强高校在线课堂。</p>
+          <p class="overflowClip_2">各种文献书籍搜索汇总</p>
         </div>
       </div>
     </div>
@@ -376,8 +361,325 @@
     </div>
   </div>
   
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.hpcwire.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.hpcwire.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/hpcwire.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>HPCwire</strong>
+          </a>
+          <p class="overflowClip_2">最新的HPC资讯</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
 <br />
+
+    
+    
+    
+    
+    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="学校网站"></i>学校网站</h4>
+<div class="row">
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.nudt.edu.cn', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.nudt.edu.cn">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/nudt_menhu.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>门户首页</strong>
+          </a>
+          <p class="overflowClip_2">nudt门户首页</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://library.nudt.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://library.nudt.edu.cn/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/nudt_library.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>图书馆首页</strong>
+          </a>
+          <p class="overflowClip_2">nudt图书馆首页</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.nudt.edu.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.nudt.edu.cn/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/nudt_mail.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>邮箱首页</strong>
+          </a>
+          <p class="overflowClip_2">nudt邮箱首页</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://202.197.9.39/h5/index.html', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://202.197.9.39/h5/index.html">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/nudt_menhu.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>讲座信息化服务平台</strong>
+          </a>
+          <p class="overflowClip_2">预约讲座平台</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br />
+
+    
+    
+    
+    
+    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="HiNAS"></i>HiNAS</h4>
+<div class="row">
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://mc.ddns.cm:17225/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://mc.ddns.cm:17225/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/overleaf.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>HiNAS_overleaf</strong>
+          </a>
+          <p class="overflowClip_2">在线Latex</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://mc.ddns.cm:17224/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://mc.ddns.cm:17224/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/HiNAS.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>HiNAS_动态</strong>
+          </a>
+          <p class="overflowClip_2">基于wordpress</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://mc.ddns.cm:17223/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://mc.ddns.cm:17223/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/nextcloud.ico" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>HiNAS_网盘</strong>
+          </a>
+          <p class="overflowClip_2">在线网盘</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://mc.ddns.cm:43211/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://mc.ddns.cm:43211/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/JXPAMG.PNG" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>JXPAMG仓库</strong>
+          </a>
+          <p class="overflowClip_2">基于Gitea的自建JXPAMG仓库</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br />
+
+    
+    
+    
+    
+    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="科学计算工具"></i>科学计算工具</h4>
+<div class="row">
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://hpc.llnl.gov/software/development-environment-software', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://hpc.llnl.gov/software/development-environment-software">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/llnl.ico" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>LLNL推荐的工具软件</strong>
+          </a>
+          <p class="overflowClip_2">LLNL推荐的软件开发配套工具。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://software.llnl.gov/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://software.llnl.gov/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/LLNL_soft_poetal.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>LLNL开发的工具软件</strong>
+          </a>
+          <p class="overflowClip_2">LLNL开发的软件开发配套工具。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://lanl.github.io/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://lanl.github.io/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/lanl-software.jpg" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>LANL开发的工具软件</strong>
+          </a>
+          <p class="overflowClip_2">LANL开发的软件开发配套工具。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://sandialabs.github.io/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://sandialabs.github.io/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/sandia-soft.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>SANDIA开发的工具软件</strong>
+          </a>
+          <p class="overflowClip_2">LANL开发的软件开发配套工具。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br />
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="邮箱"></i>邮箱</h4>
+<div class="row">
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.gscaep.ac.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.gscaep.ac.cn/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/jiuyuan2.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>中物院邮箱系统</strong>
+          </a>
+          <p class="overflowClip_2">中物院邮箱系统登录界面。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.google.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.google.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/gmail.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>Gmail</strong>
+          </a>
+          <p class="overflowClip_2">用于获取最新学术动态的Gamil邮箱。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://mail.163.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://mail.163.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/163mail.webp" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>163mail</strong>
+          </a>
+          <p class="overflowClip_2">163邮箱。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://proton.me/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://proton.me/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/protonmail.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>protonmail</strong>
+          </a>
+          <p class="overflowClip_2">国外的加密邮箱protonmail。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br />
+
     
     
     
@@ -398,39 +700,23 @@
           <a href="#" class="xe-user-name overflowClip_1">
             <strong>Github page</strong>
           </a>
-          <p class="overflowClip_2">开源及私有软件项目的托管平台。</p>
+          <p class="overflowClip_2">开源及私有软件项目的托管平台</p>
         </div>
       </div>
     </div>
   </div>
   
   <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://coding.net/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://coding.net/">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://gitee.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://gitee.com/">
       <div class="xe-comment-entry">
         <a class="xe-user-img">
-          <img data-src="/image/logos/coding.jpg" class="lozad img-circle" width="40">
+          <img data-src="/image/logos/Gitee.png" class="lozad img-circle" width="40">
         </a>
         <div class="xe-comment">
           <a href="#" class="xe-user-name overflowClip_1">
-            <strong>Coding page</strong>
+            <strong>Gitee</strong>
           </a>
-          <p class="overflowClip_2">腾讯出品的基于多人协作的软件项目托管平台。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://49.232.139.130:43211/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://49.232.139.130:43211/">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/JXPAMG.PNG" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>JXPAMG仓库</strong>
-          </a>
-          <p class="overflowClip_2">基于Gitea的自建JXPAMG仓库</p>
+          <p class="overflowClip_2">国内的开源及私有软件项目的托管平台</p>
         </div>
       </div>
     </div>
@@ -454,6 +740,7 @@
   
 </div>
 <br />
+
     
     
     
@@ -475,6 +762,22 @@
             <strong>知乎</strong>
           </a>
           <p class="overflowClip_2">知乎，可信赖的问答社区</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://forum-zh.obsidian.md/top', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://forum-zh.obsidian.md/top">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/Obsidian.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>Obsidian论坛</strong>
+          </a>
+          <p class="overflowClip_2">Obsidian中文论坛</p>
         </div>
       </div>
     </div>
@@ -528,8 +831,41 @@
     </div>
   </div>
   
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://hostloc.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://hostloc.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/hostloc.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>全球主机交流论坛</strong>
+          </a>
+          <p class="overflowClip_2">全球主机交流</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.v2ray-agent.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.v2ray-agent.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/mkca-blog.jpg" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>mkca博客</strong>
+          </a>
+          <p class="overflowClip_2">mkca大佬博客</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
 <br />
+
     
     
     
@@ -538,16 +874,16 @@
 <div class="row">
   
   <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.inoreader.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.inoreader.com/">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.guancha.cn/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.guancha.cn/">
       <div class="xe-comment-entry">
         <a class="xe-user-img">
-          <img data-src="/image/logos/inoreader.png" class="lozad img-circle" width="40">
+          <img data-src="/image/logos/guanchazhe.ico" class="lozad img-circle" width="40">
         </a>
         <div class="xe-comment">
           <a href="#" class="xe-user-name overflowClip_1">
-            <strong>inoreader</strong>
+            <strong>观察者网</strong>
           </a>
-          <p class="overflowClip_2">rss订阅网站</p>
+          <p class="overflowClip_2">观察者网，致力于荟萃中外思想者精华</p>
         </div>
       </div>
     </div>
@@ -570,32 +906,16 @@
   </div>
   
   <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.tuicool.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.tuicool.com/">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://twitter.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://twitter.com/">
       <div class="xe-comment-entry">
         <a class="xe-user-img">
-          <img data-src="/image/logos/tuiku.png" class="lozad img-circle" width="40">
+          <img data-src="/image/logos/twitter.ico" class="lozad img-circle" width="40">
         </a>
         <div class="xe-comment">
           <a href="#" class="xe-user-name overflowClip_1">
-            <strong>推酷</strong>
+            <strong>twitter</strong>
           </a>
-          <p class="overflowClip_2">聚合IT热门话题</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://houxu.app/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://houxu.app/">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/houxu.jpg" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>后续</strong>
-          </a>
-          <p class="overflowClip_2">聚合今日热榜</p>
+          <p class="overflowClip_2">关注国外高性能计算发展</p>
         </div>
       </div>
     </div>
@@ -603,12 +923,29 @@
   
 </div>
 <br />
+
     
     
     
     
     <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="常用工具"></i>常用工具</h4>
 <div class="row">
+  
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('http://49.233.16.207/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://49.233.16.207/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/firefly-iii.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>记账工具</strong>
+          </a>
+          <p class="overflowClip_2">自建的记账小工具</p>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <div class="col-sm-3">
     <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://todo.microsoft.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://todo.microsoft.com/">
@@ -621,22 +958,6 @@
             <strong>Todo</strong>
           </a>
           <p class="overflowClip_2">微软Todo list</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-3">
-    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.onenote.com/notebooks', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.onenote.com/notebooks">
-      <div class="xe-comment-entry">
-        <a class="xe-user-img">
-          <img data-src="/image/logos/onenote.jpg" class="lozad img-circle" width="40">
-        </a>
-        <div class="xe-comment">
-          <a href="#" class="xe-user-name overflowClip_1">
-            <strong>OneNote</strong>
-          </a>
-          <p class="overflowClip_2">微软Note软件</p>
         </div>
       </div>
     </div>
@@ -754,8 +1075,25 @@
     </div>
   </div>
   
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.latex-tables.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.latex-tables.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/latex-table2.PNG" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>在线Latex表格制作</strong>
+          </a>
+          <p class="overflowClip_2">更专业的在线Latex表格制作</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
 <br />
+
     
     
     
@@ -795,8 +1133,25 @@
     </div>
   </div>
   
+  <div class="col-sm-3">
+    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.zhujiceping.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.zhujiceping.com/">
+      <div class="xe-comment-entry">
+        <a class="xe-user-img">
+          <img data-src="/image/logos/zhujipince.png" class="lozad img-circle" width="40">
+        </a>
+        <div class="xe-comment">
+          <a href="#" class="xe-user-name overflowClip_1">
+            <strong>国外主机测评</strong>
+          </a>
+          <p class="overflowClip_2">国外主机测评网站。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
 <br />
+
     
     
     
@@ -858,6 +1213,7 @@
   
 </div>
 <br />
+
     
     
     
@@ -902,6 +1258,7 @@
   
 </div>
 <br />
+
     
     
     
@@ -914,7 +1271,7 @@
     <!-- Add your copyright text here -->
     <p>
       
-      &copy; 2020 - 2021
+      &copy; 2020 - 2023
       <a href="javascript:void(0);"><strong>MRZ</strong></a> | Design by <a href="http://viggoz.com" target="_blank"><strong>Viggo</strong></a> | Power by <a href="https://hexo.io/" target="_blank"><strong>Hexo</strong></a> & <a href="https://github.com/HCLonely/hexo-theme-webstack/" target="_blank"><strong>hexo-theme-webstack</strong></a>
     </p>
     
